@@ -1,0 +1,145 @@
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --accent-color: #00cec9;
+    --dark-bg: #2d3436;
+    --card-bg: #3a4042;
+    --text-color: #dfe6e9;
+    --input-bg: #4a5255;
+    --success-color: #00b894;
+    --warning-color: #fdcb6e;
+    --danger-color: #d63031;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-container, .result-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-out;
+}
+
+h2 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.grade-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.grade-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.grade-input-group label {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.grade-input-group input[type="text"],
+.grade-input-group input[type="password"],
+.grade-input-group input[type="number"] {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--input-bg);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.grade-input-group input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 206, 201, 0.2);
+    outline: none;
+}
+
+.submit-btn, .back-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.submit-btn:hover, .back-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.result-title {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.result-value {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+.result-comment {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+/* Убирает стрелки у числового ввода */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .login-container, .result-container {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+}

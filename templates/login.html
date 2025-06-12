@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Авторизация</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Вход</h2>
+    <form method="POST" action="/login" class="grade-form">
+	  <div class="grade-input-group">
+      	<label for="username">Имя пользователя:</label>
+      	<input type="text" id="username" name="username" required>
+	  </div>
+
+	  <div class="grade-input-group">
+      	<label for="password">Пароль:</label>
+      	<input type="password" id="password" name="password" required>
+	  </div>
+
+      <input type="submit" value="Войти" class="submit-btn">
+    </form>
+  </div>
+</body>
+</html>
+
+
